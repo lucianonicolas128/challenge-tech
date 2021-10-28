@@ -1,0 +1,35 @@
+
+.expandible{
+  font-size: 14px;
+  font-weight: 500;
+  color: #909194;
+}
+
+.rigth>h4{
+  font-weight: 500;
+  color: #bdbdbd;
+}
+
+.rigth>h1{
+  font-weight: bolder;
+}
+.rigth>h5{
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.upload-cover__left>h4{
+  font-weight: 600;
+}
+
+.upload-cover__rigth img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.event-link>h4{
+  font-weight: 600;
+  font-size: 0.9rem;
+}

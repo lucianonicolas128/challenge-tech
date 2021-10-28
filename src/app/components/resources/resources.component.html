@@ -1,0 +1,84 @@
+<div class="px-5">
+  <h2 class="mt-2">Resources</h2>
+  <mat-tab-group mat-align-tabs="start" class="w-100">
+    <mat-tab label="Explore Resources">
+      <div class="row">
+        <!-- aside -->
+        <div class="col-md-3 left">
+          <mat-nav-list>
+            <!-- categories -->
+            <a mat-list-item class="expandible" (click)="categories = !categories"> CATEGORIES
+              <mat-icon *ngIf="!categories">expand_more</mat-icon>
+              <mat-icon *ngIf="categories">expand_less</mat-icon>
+            </a>
+            <div *ngIf="categories">
+              <p>
+                <mat-checkbox>Technical skills</mat-checkbox>
+              </p>
+              <p>
+                <mat-checkbox>Finding a job</mat-checkbox>
+              </p>
+              <p>
+                <mat-checkbox>Professional growth</mat-checkbox>
+              </p>
+              <p>
+                <mat-checkbox>Startups</mat-checkbox>
+              </p>
+            </div>
+            <!-- types -->
+            <a mat-list-item class="expandible" (click)="type = !type"> TYPE
+              <mat-icon *ngIf="!type">expand_more</mat-icon>
+              <mat-icon *ngIf="type">expand_less</mat-icon>
+            </a>
+            <div *ngIf="type">
+              <p>
+                <mat-checkbox>Technical skills</mat-checkbox>
+              </p>
+              <p>
+                <mat-checkbox>Finding a job</mat-checkbox>
+              </p>
+            </div>
+            <!-- tribes -->
+            <a mat-list-item class="expandible" (click)="tribes = !tribes"> TRIBES
+              <mat-icon *ngIf="!tribes">expand_more</mat-icon>
+              <mat-icon *ngIf="tribes">expand_less</mat-icon>
+            </a>
+            <div *ngIf="tribes">
+              <p>
+                <mat-checkbox>Technical skills</mat-checkbox>
+              </p>
+              <p>
+                <mat-checkbox>Finding a job</mat-checkbox>
+              </p>
+            </div>
+          </mat-nav-list>
+        </div>
+        <!-- aside -->
+
+        <div class="col-md-9 rigth">
+          <div class="row mt-3">
+            <div class="col-md-4" *ngFor="let card of cards">
+              <mat-card>
+                <img mat-card-image [src]="card.banner" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                  <h3>{{card.title}}</h3>
+
+                  <div class="d-flex justify-content-between mt-3">
+                    <img [src]="card.avatar" class="avatar" alt="">
+                    <h4>{{card.username}}</h4>
+                    <mat-icon>bookmark_border</mat-icon>
+                  </div>
+                </mat-card-content>
+                <!-- <mat-divider></mat-divider> -->
+                <hr>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </mat-tab>
+    <mat-tab label="Saved"></mat-tab>
+  </mat-tab-group>
+</div>

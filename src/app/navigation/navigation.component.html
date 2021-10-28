@@ -1,0 +1,95 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport class="sidenav"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+
+    <mat-toolbar><span class="logo"><img src="../../assets/tct-fullmark.png" alt=""></span></mat-toolbar>
+
+    <mat-nav-list>
+      <a mat-list-item>
+        <mat-icon>search</mat-icon> Find anything
+      </a>
+      <a mat-list-item>
+        <mat-icon>notifications</mat-icon> Notifications
+      </a>
+
+      <a mat-list-item>
+        <mat-icon>insights</mat-icon> Pulse
+      </a>
+
+      <a mat-list-item class="expandible" (click)="connect = !connect"> CONNECT
+        <mat-icon *ngIf="!connect">expand_more</mat-icon>
+        <mat-icon *ngIf="connect">expand_less</mat-icon>
+      </a>
+      <div *ngIf="connect">
+        <a mat-list-item>
+          <mat-icon>supervised_user_circle</mat-icon> Members
+        </a>
+        <a mat-list-item>
+          <mat-icon>bolt</mat-icon> Tribes
+        </a>
+      </div>
+
+      <a mat-list-item class="expandible" (click)="engage = !engage"> ENGAGE
+        <mat-icon *ngIf="!engage">expand_more</mat-icon>
+        <mat-icon *ngIf="engage">expand_less</mat-icon>
+      </a>
+      <div *ngIf="engage">
+        <a mat-list-item>
+          <mat-icon>whatshot</mat-icon> My clan
+        </a>
+        <a mat-list-item>
+          <mat-icon>question_answer</mat-icon> Messages
+        </a>
+      </div>
+
+      <a mat-list-item class="expandible" (click)="hunt = !hunt"> HUNT
+        <mat-icon *ngIf="!hunt">expand_more</mat-icon>
+        <mat-icon *ngIf="hunt">expand_less</mat-icon>
+      </a>
+      <div *ngIf="hunt">
+        <a mat-list-item>
+          <mat-icon>work_outline</mat-icon> Job board
+        </a>
+        <a mat-list-item>
+          <mat-icon>sticky_note_2</mat-icon> Tracker
+        </a>
+      </div>
+
+      <a mat-list-item class="expandible" (click)="grow = !grow"> GROW
+        <mat-icon *ngIf="!grow">expand_more</mat-icon>
+        <mat-icon *ngIf="grow">expand_less</mat-icon>
+      </a>
+      <div *ngIf="grow">
+        <a mat-list-item routerLink="/events">
+          <mat-icon>event</mat-icon> Events
+        </a>
+        <a mat-list-item routerLink="/resources">
+          <mat-icon>school</mat-icon> Resources
+        </a>
+      </div>
+
+
+      <a mat-list-item class="account">
+        <div class="avatar">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80"
+            alt="">
+        </div>Arif Gursel <mat-icon>chevron_right</mat-icon>
+      </a>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>{{title}}</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
